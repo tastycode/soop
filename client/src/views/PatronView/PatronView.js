@@ -78,7 +78,7 @@ _stripeKey() {
 }
 
 _amountFromCount() {
-  return this.state.count * 10;
+  return this.state.count * 1000; //10 dollars
 }
 
 _handleSubmit (e) {
