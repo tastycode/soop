@@ -1,8 +1,8 @@
 class PatronsController < ApplicationController
   def create
     customer = Stripe::Customer.create(
-     :email => params[:stripeEmail],
-     :source  => params[:stripeToken],
+     :email => params[:patron][:email],
+     :source  => params[:patron][:token],
      :plan => 'monthly_groceries',
      :quantity => params[:count]
    )
@@ -11,7 +11,11 @@ class PatronsController < ApplicationController
     patron.stripe_id = customer.id
     patron.stripe_state = "subscribed"
     patron.save
-    redirect_to thanks_patron_path(1)
+    render json: {
+      patron: {
+        id: patron.id
+      }
+    }
   end
 
   protected

@@ -1,5 +1,0 @@
-class PatronsController < ApplicationController
-  def create
-    redirect_to 'thanks'
-  end
-end

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
 
   root to: 'page#home'
 
-  resources :patrons do
+  resources :patrons, except: [:new] do
+    collection do
+        get 'new', to: 'page#home', as: 'new'
+    end
+    
     member do
       get 'thanks'
     end
