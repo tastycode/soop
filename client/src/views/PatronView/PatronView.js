@@ -76,6 +76,11 @@ _onChecked (prop, reversed = false) {
 _stripeKey() {
   return document.querySelector('meta[name=stripe-key]').content
 }
+
+_amountFromCount() {
+  return this.state.count * 10;
+}
+
 _handleToken (stripeData) {
   this.setState({
     token: stripeData.id,
@@ -94,9 +99,9 @@ _handleToken (stripeData) {
             <Geosuggest onSuggestSelect={this._handleSuggest.bind(this)}/>
           <label>How many people</label>
             <input name='patron[count]'
-              value={this.state.count} onChange={this._onStateChange('state').bind(this)}/>
+              value={this.state.count} onChange={this._onStateChange('count').bind(this)}/>
           <br/>
-          <StripeCheckout token={this._handleToken.bind(this)} stripeKey={this._stripeKey()}/>
+          <StripeCheckout token={this._handleToken.bind(this)} stripeKey={this._stripeKey()} amount={this._amountFromCount()}/>
         </form>
       </div>
     )

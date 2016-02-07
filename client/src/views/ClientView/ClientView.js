@@ -112,7 +112,7 @@ _onOptionChecked (prop, subprop) {
               value={this.state.email} onChange={this._onStateChange('email').bind(this)}/>
           <label>How many people</label>
             <input name='client[count]'
-              value={this.state.count} onChange={this._onStateChange('state').bind(this)}/>
+              value={this.state.count} onChange={this._onStateChange('count').bind(this)}/>
             <input name='client[tastes]'/>
           <label>Do you have any allergies or other restrictions?</label>
           <input type='radio' name='restrictions'
