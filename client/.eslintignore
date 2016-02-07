@@ -1,4 +1,5 @@
 coverage/**
+src
 node_modules/**
 dist/**
 *.spec.js
