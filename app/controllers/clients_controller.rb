@@ -1,7 +1,6 @@
 class ClientsController < ApplicationController
   def create
     c = Client.new(client_params)
-    binding.pry
     c.state = "new"
     c.save
     render json: {
@@ -15,6 +14,7 @@ class ClientsController < ApplicationController
     c = Client.find(params[:id])
     c.confirmed = true
     c.save
+    NotificationMailer.client_added(c).deliver_later
     redirect_to thanks_client_path(1)
   end
 
@@ -22,6 +22,7 @@ class ClientsController < ApplicationController
   def client_params
     params.require(:client).permit(
           :fullname,
+          :email,
           :address,
           :address2,
           :city,
