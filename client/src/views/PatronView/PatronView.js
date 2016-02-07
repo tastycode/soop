@@ -9,7 +9,7 @@ export class PatronView extends React.Component {
     locationSearch: '',
   };
 
-  _handleSubmit () {
+  _createPatron () {
     const authToken = document.querySelector('meta[name=csrf-token]').content
     request
        .post('/patrons')
@@ -81,17 +81,21 @@ _amountFromCount() {
   return this.state.count * 10;
 }
 
+_handleSubmit (e) {
+  e.preventDefault();
+  return false;
+}
 _handleToken (stripeData) {
   this.setState({
     token: stripeData.id,
     email: stripeData.email
   });
-  this._handleSubmit()
+  this._createPatron()
 }
   render () {
     return (
       <div className='container text-center'>
-        <form>
+        <form onSubmit={this._handleSubmit}>
           <label>Your name</label>
             <input name='patron[fullname]'
             value={this.state.fullname} onChange={this._onStateChange('fullname').bind(this)}/>
