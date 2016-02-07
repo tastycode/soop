@@ -175,8 +175,10 @@ webpackConfig.module.loaders.push({
   ]
 })
 
+var sassPaths = require("node-neat").includePaths;
+
 webpackConfig.sassLoader = {
-  includePaths: paths.client('styles')
+  includePaths: [paths.client('styles')].concat(sassPaths)
 }
 
 webpackConfig.postcss = [
@@ -224,7 +226,7 @@ if (!__DEV__) {
   })
 
   webpackConfig.plugins.push(
-    new ExtractTextPlugin('[name].[contenthash].css', {
+    new ExtractTextPlugin('[name].css.scss', {
       allChunks: true
     })
   )

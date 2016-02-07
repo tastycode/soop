@@ -1,4 +1,6 @@
+@import "_variables_and_mixins";
 :global {
+  @import url(https://fonts.googleapis.com/css?family=Varela+Round|Karla:400,700,400italic);
   @import 'base';
   @import 'vendor/normalize';
 
@@ -8,16 +10,81 @@
     box-sizing: border-box;
   }
 
+  .outer-container {
+    @include outer-container;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
   html,
   body {
     margin: 0;
     padding: 0;
     height: 100%;
+    font-size: $fs-root;
+    line-height: $lh-root;
+    font-family: Karla, sans-serif;
+    color: $primary-text;
   }
 
+  input, select {
+    font-size: $fs-root;
+    line-height: $lh-root;
+    color: $primary-text;
+  }
+
+  footer {
+
+    margin-top: $gap-large3;
+    text-align: center;
+    padding: 3em;
+    background-color: $divider;
+    color: $accent;
+  }
+
+  .pageTitle {
+    @include headline();
+    padding: $gap-large3;
+    padding-left: 0px;
+  }
+.field {
+  padding: $gap-medium;
+  label {
+      display: block;
+  }
+
+}
   *,
   *:before,
   *:after {
     box-sizing: inherit;
+  }
+
+  .header {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary;
+
+    &-brand {
+      flex: 1;
+      img {
+          height: 35px;
+      }
+      margin-left: $gap-large2;
+    }
+
+    &-links {
+      list-style-type: none;
+      margin-right: $gap-large2;
+      a {
+        text-transform: uppercase;
+      }
+    }
+
   }
 }

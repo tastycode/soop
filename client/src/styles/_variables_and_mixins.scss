@@ -1,0 +1,40 @@
+
+@import 'bourbon';
+@import 'neat';
+$fs-root: 16px;
+$lh-root: 20px;
+$fs-large: 1.414rem;
+$lh-large: 25px;
+$fs-large2: 1.9rem;
+$lh-large2: 30px;
+$fs-large3: 2.8rem;
+$lh-large3: 45px;
+
+$gap-small: 5px;
+$gap-medium: 10px;
+$gap-large: 15px;
+$gap-large2: 20px;
+$gap-large3: 30px;
+
+
+$primary-text: #1F1E1F;
+$primary-dark: #d32f2f;
+$accent: #536dfe;
+$primary: #f44336;
+$primary-light: #ffcdd2;
+$secondary-text: #727272;
+$divider: #b6b6b6;
+
+@mixin headline() {
+  font-size: $fs-large3;
+  line-height: $lh-large3;
+  font-family: 'Varela Round', sans-serif;
+}
+
+@mixin headline2() {
+  font-size: $fs-large3;
+  line-height: $lh-large3;
+}
+
+@mixin headline3() {
+}

@@ -94,16 +94,26 @@ _handleToken (stripeData) {
 }
   render () {
     return (
-      <div className='container text-center'>
+      <div className='outer-container text-center'>
+        <div className='pageTitle'>
+          Contribute
+        </div>
+
         <form onSubmit={this._handleSubmit}>
-          <label>Your name</label>
-            <input name='patron[fullname]'
-            value={this.state.fullname} onChange={this._onStateChange('fullname').bind(this)}/>
-          <label>Your address</label>
-            <Geosuggest onSuggestSelect={this._handleSuggest.bind(this)}/>
-          <label>How many people</label>
-            <input name='patron[count]'
-              value={this.state.count} onChange={this._onStateChange('count').bind(this)}/>
+          <div className="field">
+            <label>Your name</label>
+              <input name='patron[fullname]'
+              value={this.state.fullname} onChange={this._onStateChange('fullname').bind(this)}/>
+            </div>
+          <div className="field">
+            <label>Your address</label>
+              <Geosuggest onSuggestSelect={this._handleSuggest.bind(this)}/>
+          </div>
+          <div className="field">
+            <label>How many people can you feed?</label>
+              <input name='patron[count]'
+                value={this.state.count} onChange={this._onStateChange('count').bind(this)}/>
+          </div>
           <br/>
           <StripeCheckout token={this._handleToken.bind(this)} stripeKey={this._stripeKey()} amount={this._amountFromCount()}/>
         </form>

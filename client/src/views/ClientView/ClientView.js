@@ -95,31 +95,48 @@ _onOptionChecked (prop, subprop) {
 }
   render () {
     return (
-      <div className='container text-center'>
-        <h1>This is a client page</h1>
+      <div className='outer-container text-center'>
+        <div className='pageTitle'>
+        Apply for food
+        </div>
         <hr />
         <form onSubmit={this._handleSubmit.bind(this)}>
-          <label>Your name</label>
-            <input name='client[fullname]'
-            value={this.state.fullname} onChange={this._onStateChange('fullname').bind(this)}/>
-          <label>Your address</label>
-            <Geosuggest onSuggestSelect={this._handleSuggest.bind(this)}/>
-          <label>Address line 2</label>
-            <input name='client[address2]'
-              value={this.state.address2} onChange={this._onStateChange('address2').bind(this)}/>
-          <label>Email</label>
-            <input name='client[email]'
-              value={this.state.email} onChange={this._onStateChange('email').bind(this)}/>
-          <label>How many people</label>
-            <input name='client[count]'
-              value={this.state.count} onChange={this._onStateChange('count').bind(this)}/>
-            <input name='client[tastes]'/>
-          <label>Do you have any allergies or other restrictions?</label>
-          <input type='radio' name='restrictions'
-            value='1' onChange={this._onChecked('hasRestrictions').bind(this)}/>
-          <input type='radio' name='restrictions'
-            value='0' onChange={this._onChecked('hasRestrictions', true).bind(this)} defaultChecked={true}/>
-          {this.restrictionsOptions()}
+          <div className="field">
+            <label>Your name</label>
+              <input name='client[fullname]'
+              value={this.state.fullname} onChange={this._onStateChange('fullname').bind(this)}/>
+          </div>
+          <div className="field">
+            <label>Your address</label>
+              <Geosuggest onSuggestSelect={this._handleSuggest.bind(this)}/>
+          </div>
+          <div className="field">
+            <label>Address line 2</label>
+              <input name='client[address2]'
+                value={this.state.address2} onChange={this._onStateChange('address2').bind(this)}/>
+          </div>
+          <div className="field">
+            <label>Email</label>
+              <input name='client[email]'
+                value={this.state.email} onChange={this._onStateChange('email').bind(this)}/>
+          </div>
+          <div className="field">
+            <label>How many people</label>
+              <input name='client[count]'
+                value={this.state.count} onChange={this._onStateChange('count').bind(this)}/>
+          </div>
+          <div className="field">
+            <label>Do you have any allergies or other restrictions?</label>
+            <label>Yes
+              <input type='radio' name='restrictions'
+                value='1' onChange={this._onChecked('hasRestrictions').bind(this)}/>
+            </label>
+            <label>No
+              <input type='radio' name='restrictions'
+                value='0' onChange={this._onChecked('hasRestrictions', true).bind(this)} defaultChecked={true}/>
+            </label>
+            {this.restrictionsOptions()}
+          </div>
           <br/>
           <button>Done</button>
         </form>

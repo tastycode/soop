@@ -8,4 +8,10 @@ Rails.application.config.assets.paths << Rails.root.join('client/dist')
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
-Rails.application.config.assets.precompile += %w( app.js vendor.js)
+Rails.application.config.assets.precompile += %w(
+  app.js
+  vendor.js
+  app.css
+  soop-logo-light.png
+  homeless.png
+)

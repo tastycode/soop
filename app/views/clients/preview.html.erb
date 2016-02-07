@@ -1,7 +1,10 @@
-Does every look right?
 
-<%= form_tag(confirm_client_path(params[:id]), method: 'post') do %>
+<div class="outer-container">
+  <h1>Last step</h1>
+  <h2>Are you able to accept packages at your address</h2>
 
-<button>Yes</button>
-
-<% end %>
+  <%= form_tag(confirm_client_path(params[:id]), method: 'post') do %>
+  <button>Yes</button>
+  <button>No</button>
+  <% end %>
+</div>

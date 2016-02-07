@@ -4,14 +4,28 @@
   <title>Soop</title>
   <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
 
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'app', media: 'all' %>
   <%= csrf_meta_tags %>
   <meta name="stripe-key" content="<%=ENV['STRIPE_PUBLIC_KEY']%>"/>
 </head>
 <body>
-
+  <header class="header">
+    <div class="header-brand">
+      <a href="/">
+        <img src="<%=image_url('soop-logo-light.png')%>" alt="Soop Logo"/>
+      </a>
+    </div>
+    <ul class="header-links">
+      <li>
+        <a href="/clients/new">Apply for food</a>
+      </li>
+    </ul>
+  </header>
 <%= yield %>
 <div id="root"></div>
+<footer>
+  Made with love in Oakland, CA
+</footer>
 
 <%= javascript_include_tag 'vendor' %>
 <%= javascript_include_tag 'app' %>

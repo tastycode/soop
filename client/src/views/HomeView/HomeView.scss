@@ -1,3 +1,144 @@
+@import "_variables_and_mixins";
+.homeHero {
+  background-image: url('views/HomeView/homeless.png');
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.homeHeroOverTitle {
+  @include headline2;
+  display: inline-block;
+  color: white;
+  background-color: $primary-text;
+  margin-left: $gap-large3;
+}
+.homeHeroTitle {
+  @include headline;
+  margin-left: $gap-large3;
+  display: inline-block;
+  color: white;
+  background-color: $primary-text;
+  line-height: 65px;
+}
+
+.learnMore {
+    text-align: center;
+}
+
+.solveable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.howItWorks {
+  @include outer-container;
+  padding: $gap-large3;
+  background-color: $divider;
+
+font-weight: bold;
+font-size: $fs-large;
+
+  &--lead {
+    @include span-columns(6);
+    img {
+      width: 100px;
+    }
+    text-align: center;
+  }
+  &--final {
+    img {
+      width: 100px;
+    }
+    @include span-columns(6);
+    @include omega();
+    text-align: center;
+  }
+}
+
+.impact {
+  @include outer-container;
+  padding: $gap-large3;
+  &--lead {
+    @include span-columns(6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  &--final {
+    @include span-columns(6);
+    @include omega;
+    text-align: center;
+  }
+  &--understand {
+    @include headline2();
+  }
+  &--p {
+    font-size: $fs-large;
+    line-height: $lh-large;
+  }
+}
+
+.quote {
+  background-color: $divider;
+  &--container {
+      @include outer-container;
+  padding: $gap-large3;
+  }
+
+  &--lead {
+    @include span-columns(6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &--final {
+    @include span-columns(6);
+    @include omega();
+    font-size: $fs-large2;
+    line-height: $lh-large2;
+    text-style: italic;
+  }
+  &--avatar {
+    border-radius: 50%;
+    width: 100px;
+  }
+}
+
+.cta {
+  padding: $gap-large3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 200px;
+}
+
+.ctaText {
+  font-size: $fs-large2;
+  line-height: $lh-large2;
+  text-align: center;
+}
+
+.ctaButton {
+  display: block;
+  color: white;
+  background-color: $primary;
+  padding: $gap-medium;
+  text-align: center;
+
+}
+
+
 .counter {
   font-weight: bold;
 }
