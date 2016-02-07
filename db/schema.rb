@@ -11,6 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20160207152215) do
+
+  create_table "clients", force: :cascade do |t|
+    t.string   "fullname"
+    t.string   "address"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.decimal  "location_lat"
+    t.decimal  "location_lng"
+    t.boolean  "anonymous"
+    t.integer  "count"
+    t.string   "tastes"
+    t.string   "restrictions"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.boolean  "confirmed"
+  end
+
+  create_table "patrons", force: :cascade do |t|
+    t.string   "fullname"
+    t.string   "email"
+    t.decimal  "location_lat"
+    t.decimal  "location_lng"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "stripe_id",    null: false
+    t.string   "stripe_state"
+    t.integer  "count"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
 end

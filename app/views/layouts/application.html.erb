@@ -2,13 +2,17 @@
 <html>
 <head>
   <title>Soop</title>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places"></script>
+
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
+<div id="root"></div>
 
+<%= javascript_include_tag 'vendor' %>
+<%= javascript_include_tag 'app' %>
 </body>
 </html>

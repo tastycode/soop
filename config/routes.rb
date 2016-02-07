@@ -11,13 +11,20 @@ Rails.application.routes.draw do
 
   resources :patrons do
     member do
+      get 'thanks'
+    end
+  end
+
+  resources :clients, except: [:new] do
+    collection do
+      get 'new', to: 'page#home', as: 'new'
+    end
+    member do
       get 'preview'
       post 'confirm'
       get 'thanks'
     end
   end
-
-  resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

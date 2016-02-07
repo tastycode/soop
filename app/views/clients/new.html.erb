@@ -1,0 +1,11 @@
+Apply for food
+
+<%= form_tag(clients_path, method: :post) do %>
+  <input name="client[fullname]"/>
+  <input name="client[address]"/>
+  <input name="client[address2]"/>
+  <input name="client[count]"/>
+  <input name="client[tastes]"/>
+  <input name="client[restrictions]"/>
+  <button>Done</button>
+<% end %>

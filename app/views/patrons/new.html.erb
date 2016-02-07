@@ -1,0 +1,15 @@
+
+<%= form_tag(patrons_path, method: 'post') do %>
+<label>Name</label><input type="text" name="patron[fullname]"
+<label>Count</label><input type="text" name="patron[count]"/>
+<label>Location</label><input type="text" name="patron[location]"/>
+  <script
+    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="pk_test_t3s85VaJY3ix0Kr7wHDgct5O"
+    data-amount="2000"
+    data-name="Demo Site"
+    data-description="2 widgets ($20.00)"
+    data-image="/128x128.png"
+    data-locale="auto">
+  </script>
+<% end %>
