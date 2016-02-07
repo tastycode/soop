@@ -62,6 +62,13 @@
   *:after {
     box-sizing: inherit;
   }
+h1 {
+display: block;
+}
+  form {
+    @include span-columns(12);
+
+  }
 
   .header {
     height: 60px;

@@ -29,6 +29,12 @@ export class HomeView extends React.Component {
               in Oakland, CA
             </div>
             <h1 className={classes.homeHeroTitle}>400 people go hungry every month</h1>
+            <br/>
+            <br/>
+            <br/>
+            <div className={classes.homeHeroOverTitle}>
+              Soop is the nation's online soup kitchen
+            </div>
           </div>
           <div className={classes.learnMore}>
             Learn More

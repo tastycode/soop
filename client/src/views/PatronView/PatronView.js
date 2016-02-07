@@ -110,7 +110,7 @@ _handleToken (stripeData) {
               <Geosuggest onSuggestSelect={this._handleSuggest.bind(this)}/>
           </div>
           <div className="field">
-            <label>How many people can you feed?</label>
+            <label>How many people can you feed for $10/month?</label>
               <input name='patron[count]'
                 value={this.state.count} onChange={this._onStateChange('count').bind(this)}/>
           </div>
