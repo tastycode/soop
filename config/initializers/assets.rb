@@ -15,3 +15,7 @@ Rails.application.config.assets.precompile += %w(
   soop-logo-light.png
   homeless.png
 )
+
+Rails.application.config.assets.precompile += Dir.glob(Rails.root.join('client/dist/*')).map do |f|
+  File.basename(f)
+end
