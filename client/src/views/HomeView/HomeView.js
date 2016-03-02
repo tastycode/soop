@@ -37,10 +37,12 @@ export class HomeView extends React.Component {
             </div>
           </div>
           <div className={classes.learnMore}>
-            Learn More
+            <a href="#more">
+              Learn More
+            </a>
           </div>
         </div>
-        <div className={classes.solveable}>
+        <div id="more" className={classes.solveable}>
           <h2>Hunger is solveable.</h2>
         </div>
         <div className={classes.howItWorks}>
